@@ -111,8 +111,8 @@
     background:var(--surface);border:1px solid var(--line);
     box-shadow:0 30px 70px rgba(6,10,16,.28),inset 0 0 0 1px rgba(255,255,255,.04);
     -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
-  .phero-frame img{width:100%;height:100%;object-fit:cover;object-position:center 28%;display:block;
-    filter:contrast(1.03) saturate(1.02)}
+  .phero-frame img{width:100%;height:100%;object-fit:cover;object-position:center center;display:block;
+    filter:contrast(1.04) saturate(1.03) brightness(1.01)}
   .phero-frame::after{content:"";position:absolute;inset:0;
     background:linear-gradient(180deg,transparent 42%,color-mix(in srgb,var(--bg) 88%,transparent) 100%)}
   .phero-title{
@@ -334,10 +334,11 @@
     </div>
     <div class="phero-stage">
       <div class="phero-glow"><span class="g1"></span><span class="g2"></span></div>
-       <div class="phero-frame">
-       <img src="me.jpg" alt="Portrait of Eron">
+      <div class="phero-frame">
+        <img src="me.jpg" alt="Portrait of Eron">
       </div>
-     <h1 class="phero-title">Software Developer</h1>
+      <h1 class="phero-title">Software Developer</h1>
+    </div>
     <div class="phero-foot">
       <p class="phero-sub">Second-stage Computer Science student in Erbil — I build apps, bots, and tools that turn ideas into working software.</p>
       <a class="phero-contact" data-tab="contact" href="#">Let's talk →</a>
@@ -665,4 +666,101 @@
   <div class="wrap">ERON <span class="dot">·</span> TORQUE BYTE FIT <span class="dot">·</span> CODE · CARS · FITNESS</div>
 </footer>
 
-<script src="index.js"></script>
+<script>
+// index.js — Eron portfolio scripts
+// Wrapped in DOMContentLoaded so it works whether it's loaded in <head> or at the end of <body>.
+document.addEventListener('DOMContentLoaded', function () {
+
+  // ---- theme toggle (light / dark) ----
+  var root = document.documentElement,
+      btn  = document.getElementById('themeBtn'),
+      sun  = document.getElementById('sun'),
+      moon = document.getElementById('moon');
+
+  function sysDark() {
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+  }
+
+  function apply(mode) {
+    if (mode === 'dark')      { root.setAttribute('data-theme', 'dark'); }
+    else if (mode === 'light'){ root.setAttribute('data-theme', 'light'); }
+    var dark = mode === 'dark' || (mode !== 'light' && sysDark());
+    if (sun)  sun.hidden  = dark;
+    if (moon) moon.hidden = !dark;
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('eron-theme'); } catch (e) {}
+  apply(saved || (sysDark() ? 'dark' : 'light'));
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var isDark = moon && moon.hidden === false;
+      var next = isDark ? 'light' : 'dark';
+      apply(next);
+      try { localStorage.setItem('eron-theme', next); } catch (e) {}
+    });
+  }
+
+  // ---- discord: click to copy username ----
+  var dBtn = document.getElementById('discordBtn'),
+      dLbl = document.getElementById('discordLabel');
+  if (dBtn) {
+    dBtn.addEventListener('click', function () {
+      var name = '0baw';
+      function ok() {
+        if (!dLbl) return;
+        var o = dLbl.textContent;
+        dLbl.textContent = 'Copied!';
+        setTimeout(function () { dLbl.textContent = o; }, 1300);
+      }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(name).then(ok).catch(ok);
+      } else {
+        ok();
+      }
+    });
+  }
+
+  // ---- reveal elements on scroll ----
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  // ---- TABS (click a nav item to switch section) ----
+  var panels = Array.prototype.slice.call(document.querySelectorAll('.tab-panel'));
+  if (panels.length) {
+    function activate(id) {
+      var found = false;
+      panels.forEach(function (p) {
+        var on = p.id === id;
+        p.classList.toggle('active', on);
+        if (on) found = true;
+      });
+      if (!found) return;
+      document.querySelectorAll('.links .tablink').forEach(function (l) {
+        l.classList.toggle('on', l.getAttribute('data-tab') === id);
+      });
+      var panel = document.getElementById(id);
+      if (panel) panel.querySelectorAll('.reveal').forEach(function (e) { e.classList.add('in'); });
+      window.scrollTo(0, 0);
+    }
+    document.querySelectorAll('[data-tab]').forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        activate(el.getAttribute('data-tab'));
+      });
+    });
+    activate('home');
+  }
+
+});
+
+</script>
