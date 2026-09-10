@@ -7,41 +7,41 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;600;700;800&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap">
 <style>
-  /* ===== TOKENS ===== */
+  /* ===== TOKENS — Midnight Blue ===== */
   :root{
-    --bg:#EEF0F3; --bg2:#E4E7EC; --surface:#FFFFFF; --surface2:#F5F7F9;
-    --text:#141922; --muted:#5A636E; --line:#D8DCE3; --line-strong:#C3C9D2;
-    --accent:#E23A1E; --accent-ink:#FFFFFF; --accent-soft:rgba(226,58,30,.10);
-    --steel:#1E63D6; --steel-soft:rgba(30,99,214,.10);
-    --good:#1F9D57;
-    --shadow:0 1px 2px rgba(16,22,30,.06),0 8px 24px rgba(16,22,30,.08);
-    --shadow-lift:0 2px 6px rgba(16,22,30,.10),0 20px 44px rgba(16,22,30,.16);
-    --grid:rgba(20,25,34,.05);
-    --carbon:rgba(20,25,34,.035);
+    --bg:#080B12; --bg2:#05070C; --surface:#0E1420; --surface2:#141C2B;
+    --text:#F2F5F9; --muted:#8B96A8; --line:#1D2738; --line-strong:#2A3648;
+    --accent:#4F8CFF; --accent-hover:#6EA2FF; --accent-ink:#FFFFFF; --accent-soft:rgba(79,140,255,.14);
+    --steel:#6EA2FF; --steel-soft:rgba(110,162,255,.14);
+    --good:#42D392; --bad:#FF5C6C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+    --shadow-lift:0 2px 8px rgba(0,0,0,.55),0 24px 60px rgba(0,0,0,.65);
+    --grid:rgba(255,255,255,.045);
+    --carbon:rgba(255,255,255,.03);
   }
   @media (prefers-color-scheme:dark){
     :root:not([data-theme="light"]){
-      --bg:#0D1016; --bg2:#0A0D12; --surface:#151A22; --surface2:#1B2230;
-      --text:#E9ECF1; --muted:#8D97A6; --line:#242C38; --line-strong:#323C4B;
-      --accent:#FF4E2E; --accent-ink:#0D1016; --accent-soft:rgba(255,78,46,.14);
-      --steel:#5AA0FF; --steel-soft:rgba(90,160,255,.14);
-      --good:#39C980;
-      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.45);
-      --shadow-lift:0 2px 8px rgba(0,0,0,.5),0 24px 60px rgba(0,0,0,.6);
+      --bg:#080B12; --bg2:#05070C; --surface:#0E1420; --surface2:#141C2B;
+      --text:#F2F5F9; --muted:#8B96A8; --line:#1D2738; --line-strong:#2A3648;
+      --accent:#4F8CFF; --accent-hover:#6EA2FF; --accent-ink:#FFFFFF; --accent-soft:rgba(79,140,255,.14);
+      --steel:#6EA2FF; --steel-soft:rgba(110,162,255,.14);
+      --good:#42D392; --bad:#FF5C6C;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+      --shadow-lift:0 2px 8px rgba(0,0,0,.55),0 24px 60px rgba(0,0,0,.65);
       --grid:rgba(255,255,255,.045);
-      --carbon:rgba(255,255,255,.025);
+      --carbon:rgba(255,255,255,.03);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0D1016; --bg2:#0A0D12; --surface:#151A22; --surface2:#1B2230;
-    --text:#E9ECF1; --muted:#8D97A6; --line:#242C38; --line-strong:#323C4B;
-    --accent:#FF4E2E; --accent-ink:#0D1016; --accent-soft:rgba(255,78,46,.14);
-    --steel:#5AA0FF; --steel-soft:rgba(90,160,255,.14);
-    --good:#39C980;
-    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.45);
-    --shadow-lift:0 2px 8px rgba(0,0,0,.5),0 24px 60px rgba(0,0,0,.6);
+    --bg:#080B12; --bg2:#05070C; --surface:#0E1420; --surface2:#141C2B;
+    --text:#F2F5F9; --muted:#8B96A8; --line:#1D2738; --line-strong:#2A3648;
+    --accent:#4F8CFF; --accent-hover:#6EA2FF; --accent-ink:#FFFFFF; --accent-soft:rgba(79,140,255,.14);
+    --steel:#6EA2FF; --steel-soft:rgba(110,162,255,.14);
+    --good:#42D392; --bad:#FF5C6C;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.5);
+    --shadow-lift:0 2px 8px rgba(0,0,0,.55),0 24px 60px rgba(0,0,0,.65);
     --grid:rgba(255,255,255,.045);
-    --carbon:rgba(255,255,255,.025);
+    --carbon:rgba(255,255,255,.03);
   }
 
   *{box-sizing:border-box}
@@ -88,14 +88,41 @@
     transition:border-color .15s,transform .15s;
   }
   .theme-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
-  .lang-btn{display:inline-grid;place-items:center;min-width:66px;height:38px;padding:0 12px;border-radius:9px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;font-family:"Noto Kufi Arabic","IBM Plex Mono",monospace;font-size:.8rem;font-weight:600;transition:border-color .15s,transform .15s}
-  .lang-btn:hover{border-color:var(--accent);transform:translateY(-1px)}
+  .lang-btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px 0 11px;border-radius:11px;border:1px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;transition:border-color .15s,transform .15s,color .15s,box-shadow .15s}
+  .lang-label{font-family:"Noto Kufi Arabic","IBM Plex Mono",monospace;font-size:.82rem;font-weight:600}
+  [data-active-tab="home"] .foot-social{display:none}
+  .lang-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-1px);box-shadow:0 0 0 4px var(--accent-soft)}
+  .lang-btn.on{color:var(--accent);border-color:var(--accent)}
   /* Kurdish (Sorani) fonts + readability when RTL */
   [dir="rtl"] body{font-family:"Noto Sans Arabic",system-ui,sans-serif}
-  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .sec-title,[dir="rtl"] .brand,[dir="rtl"] nav.links a,[dir="rtl"] .tag,[dir="rtl"] .lang-btn,[dir="rtl"] .goal .no,[dir="rtl"] .stage,[dir="rtl"] .phero-pill,[dir="rtl"] .clink{font-family:"Noto Kufi Arabic","Noto Sans Arabic",sans-serif}
+  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] h3,[dir="rtl"] .sec-title,[dir="rtl"] .brand,[dir="rtl"] nav.links a,[dir="rtl"] .tag,[dir="rtl"] .lang-btn,[dir="rtl"] .goal .no,[dir="rtl"] .stage,[dir="rtl"] .phero-pill,[dir="rtl"] .clink,[dir="rtl"] .home2-title,[dir="rtl"] .home2-badge .t{font-family:"Noto Kufi Arabic","Noto Sans Arabic",sans-serif}
   [dir="rtl"] .phero-title{font-family:"Noto Kufi Arabic","Noto Sans Arabic",sans-serif;font-weight:700;line-height:1.3;font-size:clamp(2.1rem,6.5vw,4.6rem)}
   [dir="rtl"] .mono{letter-spacing:0}
   [dir="rtl"] p,[dir="rtl"] li,[dir="rtl"] .lead{line-height:1.95}
+  [dir="rtl"] .mono,[dir="rtl"] .idrow .k,[dir="rtl"] .idrow .val,[dir="rtl"] .k,[dir="rtl"] .val,[dir="rtl"] .chip,[dir="rtl"] .tag,[dir="rtl"] .learn li,[dir="rtl"] .eyebrow,[dir="rtl"] .home2-eyebrow,[dir="rtl"] .home2-badge{font-family:"Noto Sans Arabic",system-ui,sans-serif}
+  /* ===== HOME (split layout) ===== */
+  .home2{padding:30px 0 52px;position:relative;overflow:hidden;
+    background:radial-gradient(circle at 50% 0%,rgba(79,140,255,.12),transparent 45%),var(--bg)}
+  .home2-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .home2-eyebrow{display:inline-flex;align-items:center;gap:9px;font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+  .home2-eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+  .home2-title{font-family:"Saira",system-ui,sans-serif;font-weight:800;font-size:clamp(2.6rem,6.4vw,4.8rem);line-height:1.02;letter-spacing:-.02em;margin-top:18px}
+  .home2-title .g{color:var(--accent)}
+  .home2-lead{color:var(--muted);font-size:1.08rem;max-width:44ch;margin-top:20px;line-height:1.7}
+  .home2-actions{display:flex;gap:12px;margin-top:28px}
+  .home2-icon{display:inline-grid;place-items:center;width:48px;height:48px;border-radius:12px;border:1px solid var(--line-strong);background:var(--surface);color:var(--text);transition:border-color .15s,color .15s,transform .15s}
+  .home2-icon:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+  .home2-right{position:relative;display:flex;justify-content:flex-end}
+  .home2-glow{display:none}
+  .home2-badge{display:none}
+  [dir="rtl"] .home2-photo{-webkit-mask-image:linear-gradient(to left,transparent 0%,#000 34%),linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to left,transparent 0%,#000 34%),linear-gradient(to bottom,#000 82%,transparent 100%)}
+  .home2-photo{position:relative;z-index:1;width:100%;max-width:540px;aspect-ratio:3/4;overflow:hidden;border:none;box-shadow:none;-webkit-mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 82%,transparent 100%);-webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent 0%,#000 34%),linear-gradient(to bottom,#000 82%,transparent 100%);mask-composite:intersect}
+  .home2-photo img{width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:contrast(1.04) saturate(1.03) brightness(1.01)}
+  .home2-badge{position:absolute;inset-inline-end:16px;bottom:16px;z-index:2;display:flex;align-items:center;gap:11px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;box-shadow:var(--shadow)}
+  .home2-badge .bdot{width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 24%,transparent);flex:none}
+  .home2-badge .t{font-family:"Saira";font-weight:700;font-size:.9rem;line-height:1.15;color:var(--text)}
+  .home2-badge .t em{display:block;font-style:normal;font-weight:400;font-size:.72rem;color:var(--muted)}
+  @media(max-width:860px){.home2-grid{grid-template-columns:1fr;gap:30px}.home2-right{justify-content:center}.home2-photo{max-width:360px}}
   .tab-panel{display:none}
   .tab-panel.active{display:block}
   @media (prefers-reduced-motion:no-preference){.tab-panel.active{animation:tabfade .4s ease}@keyframes tabfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
@@ -169,7 +196,7 @@
     padding:12px 20px;border-radius:10px;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s;
     display:inline-flex;align-items:center;gap:9px;border:1px solid transparent}
   .btn.primary{background:var(--accent);color:var(--accent-ink)}
-  .btn.primary:hover{transform:translateY(-2px);box-shadow:var(--shadow-lift)}
+  .btn.primary:hover{background:var(--accent-hover);transform:translateY(-2px);box-shadow:var(--shadow-lift)}
   .btn.ghost{background:transparent;border-color:var(--line-strong);color:var(--text)}
   .btn.ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
@@ -212,7 +239,7 @@
   .about-grid strong{color:var(--text);font-weight:600}
   .id-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
   .id-card .idhead{display:flex;align-items:center;gap:14px;padding:18px 20px;border-bottom:1px solid var(--line);background:var(--surface2)}
-  .avatar{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#b52a12);display:grid;place-items:center;font-family:"Saira";font-weight:800;color:#fff;font-size:1.5rem;flex:none}
+  .avatar{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#2E5FC0);display:grid;place-items:center;font-family:"Saira";font-weight:800;color:#fff;font-size:1.5rem;flex:none}
   .idrow{display:flex;justify-content:space-between;gap:12px;padding:12px 20px;border-bottom:1px solid var(--line);font-size:.92rem}
   .idrow:last-child{border-bottom:0}
   .idrow .k{font-family:"IBM Plex Mono";font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -312,6 +339,32 @@
     .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
     .reveal.in{opacity:1;transform:none}
   }
+
+  /* ===== LIQUID GLASS ===== */
+  header.nav{background:color-mix(in srgb,var(--bg) 55%,transparent);-webkit-backdrop-filter:blur(20px) saturate(1.6);backdrop-filter:blur(20px) saturate(1.6)}
+  .skill-card,.proj,.goal,.id-card,.edu-block,.clink,.home2-icon,.home2-badge,.lang-btn,.contact-card,.stack,.foot-social a{
+    background:color-mix(in srgb,var(--surface) 52%,transparent)!important;
+    -webkit-backdrop-filter:blur(16px) saturate(1.5);backdrop-filter:blur(16px) saturate(1.5);
+    border:1px solid color-mix(in srgb,var(--line-strong) 55%,transparent)!important;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 10px 30px rgba(0,0,0,.22)!important;
+  }
+  .chip{background:color-mix(in srgb,var(--surface2) 45%,transparent)!important;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid color-mix(in srgb,var(--line) 60%,transparent)!important}
+  .phero-frame{-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+  /* ===== TERMINAL HEADER (Skills / Projects) ===== */
+  .term-bar{display:flex;align-items:center;gap:8px;padding:11px 15px;border:1px solid color-mix(in srgb,var(--line-strong) 55%,transparent);border-bottom:none;border-radius:14px 14px 0 0;background:color-mix(in srgb,var(--surface) 60%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
+  .tdot{width:12px;height:12px;border-radius:50%}
+  .tdot.r{background:#ff5f57}.tdot.y{background:#febc2e}.tdot.g{background:#28c840}
+  .term-title{margin-inline-start:8px;font-family:"IBM Plex Mono";font-size:.78rem;color:var(--muted)}
+  .term-intro{border:1px solid color-mix(in srgb,var(--line-strong) 55%,transparent);border-radius:0 0 14px 14px;background:color-mix(in srgb,var(--surface) 40%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);padding:20px 22px;margin-bottom:30px}
+  .term-line{font-family:"IBM Plex Mono";color:var(--accent);font-weight:600;font-size:.92rem}
+  .term-sub{font-family:"IBM Plex Mono";color:var(--muted);font-size:.86rem;margin-top:8px}
+  .term-sub b{color:var(--text);font-weight:600}
+  [dir="rtl"] .term-line,[dir="rtl"] .term-sub,[dir="rtl"] .term-title{font-family:"Noto Sans Arabic",monospace}
+  /* window frame that contains the section */
+  .term-window{border:1px solid color-mix(in srgb,var(--line-strong) 55%,transparent);border-radius:16px;overflow:hidden;background:color-mix(in srgb,var(--surface) 38%,transparent);-webkit-backdrop-filter:blur(18px) saturate(1.5);backdrop-filter:blur(18px) saturate(1.5);box-shadow:0 30px 70px rgba(0,0,0,.35),inset 0 1px 0 rgba(255,255,255,.06)}
+  .term-window .term-bar{border:none;border-bottom:1px solid color-mix(in srgb,var(--line-strong) 45%,transparent);border-radius:0}
+  .term-body{padding:26px 26px 32px}
+  .term-body .term-intro{border:none;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;margin:0 0 22px;border-bottom:1px dashed color-mix(in srgb,var(--line-strong) 50%,transparent);padding-bottom:18px}
 </style>
 
 <header class="nav">
@@ -321,7 +374,7 @@
       <span>ERON</span>
     </a>
     <nav class="links">
-      <a class="tablink" data-tab="home" data-ku="ماڵەوە">Home</a>
+      <a class="tablink" data-tab="home" data-ku="سەرەتا">Home</a>
       <a class="tablink" data-tab="about" data-ku="دەربارە">About</a>
       <a class="tablink" data-tab="skills" data-ku="لێهاتووییەکان">Skills</a>
       <a class="tablink" data-tab="projects" data-ku="پڕۆژەکان">Projects</a>
@@ -329,18 +382,26 @@
       <a class="tablink" data-tab="goals" data-ku="ئامانجەکان">Goals</a>
       <a class="tablink" data-tab="contact" data-ku="پەیوەندی">Contact</a>
     </nav>
-    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language">کوردی</button>
+    <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language" title="کوردی / English"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg><span class="lang-label">کوردی</span></button>
   </div>
 </header>
 
-<section id="home" class="phero tab-panel active">
-  <div class="wrap">
-    <div class="phero-stage">
-      <div class="phero-glow"><span class="g1"></span><span class="g2"></span></div>
-      <div class="phero-frame">
-        <img src="me.jpg" alt="Portrait of Eron">
+<section id="home" class="home2 tab-panel active">
+  <div class="wrap home2-grid">
+    <div class="home2-left">
+      <div class="home2-eyebrow"><span class="dot"></span><span data-ku="بەخێربێیت">WELCOME</span></div>
+      <h1 class="home2-title" data-ku="گەشەپێدەری سۆفتوێر">Software <span class="g">Developer</span></h1>
+      <p class="home2-lead" data-ku="چارەسەری بەهێز، فراوانبار و زیرەک دروست دەکەم بە کۆدی پاک و تەکنەلۆژیای هاوچەرخ.">I build robust, scalable and intelligent solutions with clean code and modern technologies.</p>
+      <div class="home2-actions">
+        <a class="home2-icon" href="https://mail.google.com/mail/?view=cm&fs=1&to=eron.omer1@gmail.com" target="_blank" rel="noopener" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M3 6.5l9 6 9-6"/></svg></a>
+        <a class="home2-icon" href="https://wa.me/9647503962006" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9 11.9 11.9 0 0 1 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38 9.9 9.9 0 0 0 9.9-9.89 9.85 9.85 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 2a9.9 9.9 0 0 0-9.9 9.89 9.83 9.83 0 0 0 1.51 5.26l.24.38-1 3.63 3.69-.97zM17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
       </div>
-      <h1 class="phero-title" data-ku="گەشەپێدەری سۆفتوێر">Software Developer</h1>
+    </div>
+    <div class="home2-right">
+      <div class="home2-glow"></div>
+      <div class="home2-photo">
+        <img src="me.jpg" alt="Eron">
+        </div>
     </div>
   </div>
 </section>
@@ -353,8 +414,8 @@
     <div class="sec-head"><span class="sec-num">01</span><h2 class="sec-title" data-ku="دەربارەی من">About Me</h2><span class="sec-line"></span></div>
     <div class="about-grid reveal">
       <div>
-        <p data-ku="من <strong>ئێرۆن</strong>م — خوێندکاری زانستی کۆمپیوتەر،لە <strong>هەولێر، کوردستان</strong>، ئێستا لە قۆناغی دووەمم. حەزم لە هەموو بوارەکانی دروستکردنی سۆفتوێرە: <strong>گەشەپێدان، زیرەکی دەستکرد، بنکەدراوە، گەشەپێدانی وێب و ئەپ، و سیستەمە کارپێکراوە پێشکەوتووەکان وەک لینوکس، ماک و ویندۆز</strong>.">I'm <strong>Eron</strong> — a Computer Science student based in <strong>Erbil, Kurdistan</strong>, currently in my second stage. I'm drawn to the whole spectrum of building software: <strong>development, AI, databases, web and app development, and advanced operating systems such as Linux, macOS, and Windows</strong>.</p>
-        <p data-ku="ئەوەی شێوازی کارکردنم پێناسە دەکات ئەوەیە کە <strong>خۆفێرکراو و کرداریم</strong>. پێم باشترە بەرنامەیەکی ڕاستەقینە دروست بکەم لەبری تەنها خوێندنەوەی تیۆرەکەی — بۆیە کاتم دەبەم بۆ دروستکردنی ئامرازی بچووک، بڵاوکردنەوەی بۆت لەسەر سێرڤەرەکانی خۆم، و تێگەیشتن لە چۆنیەتی کارکردنی شتەکان.">What defines how I work is that I'm <strong>self-taught and hands-on</strong>. I'd rather build a real application than only study the theory behind it — so I spend my time shipping small tools, deploying bots to my own servers, and tearing into how things actually run under the hood.</p>
+        <p data-ku="من ئێرۆنم — خوێندکاری زانستی کۆمپیوتەرم، لە هەولێری کوردستان دەژیم. ئێستا لە قۆناغی دووەمی زانکۆدام. حەزم لە هەموو لایەنەکانی دروستکردنی سۆفتوێرە؛ لە گەشەپێدان و زیرەکی دەستکردەوە بۆ بنکەدراوە، گەشەپێدانی وێب و ئەپ، و سیستەمەکانی کارپێکردن وەک Linux، macOS و Windows.">I'm <strong>Eron</strong> — a Computer Science student based in <strong>Erbil, Kurdistan</strong>, currently in my second stage. I'm drawn to the whole spectrum of building software: <strong>development, AI, databases, web and app development, and operating systems such as Linux, macOS, and Windows</strong>.</p>
+        <p data-ku="ئەوەی شێوازی کارکردنم پێناسە دەکات ئەوەیە کە خۆفێر و کرداریم. پێم باشترە بەرنامەیەکی ڕاستەقینە دروست بکەم، نەک تەنها تیۆرییەکەی بخوێنم. بۆیە زۆربەی کاتم بە دروستکردنی ئامرازە بچووکەکان، دانانی بۆتەکان لەسەر سێرڤەرەکانی خۆم، و تێگەیشتن لەوەی شتەکان لە پشتەوە چۆن کار دەکەن بەسەر دەبەم.">What defines how I work is that I'm <strong>self-taught and hands-on</strong>. I'd rather build a real application than only study the theory behind it — so I spend my time shipping small tools, deploying bots to my own servers, and digging into how things actually work under the hood.</p>
       </div>
       <div class="id-card">
         <div class="idhead">
@@ -368,7 +429,7 @@
         <div class="idrow"><span class="k" data-ku="بوار">Field</span><span class="val" data-ku="زانستی کۆمپیوتەر">Computer Science</span></div>
         <div class="idrow"><span class="k" data-ku="قۆناغ">Level</span><span class="val" data-ku="قۆناغی دووەم">Second Stage</span></div>
         <div class="idrow"><span class="k" data-ku="زمانەکان">Languages</span><span class="val" data-ku="کوردی · ئینگلیزی · عەرەبی">Kurdish · English · Arabic</span></div>
-        <div class="idrow"><span class="k" data-ku="حەزەکان">Interests</span><span class="val" data-ku="سۆفتوێر · زیرەکی دەستکرد · لینوکس">Software · AI · Linux</span></div>
+        <div class="idrow"><span class="k" data-ku="حەزەکان">Interests</span><span class="val" data-ku="سۆفتوێر · زیرەکی دەستکرد · Linux">Software · AI · Linux</span></div>
       </div>
     </div>
   </div>
@@ -379,6 +440,13 @@
 <!-- SKILLS -->
 <section id="skills" class="tab-panel">
   <div class="wrap">
+    <div class="term-window">
+    <div class="term-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="term-title">er0n:~ (bash)</span></div>
+    <div class="term-body">
+    <div class="term-intro">
+      <div class="term-line" data-ku="⚡ تێرمیناڵی ER0N v4.0 — [نۆدی هەولێر سەرهێڵە]">⚡ ER0N TERMINAL v4.0 — [ERBIL NODE ONLINE]</div>
+      <div class="term-sub" data-ku="سیستەم دەستپێکرا.<br>بۆ بینینی بیلدە چالاکەکان بنووسە <b>skills</b>.">System initialized.<br>Type <b>skills</b> to view active builds.</div>
+    </div>
     <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title" data-ku="لێهاتوویی تەکنیکی">Technical Skills</h2><span class="sec-line"></span></div>
     <div class="skill-grid reveal">
       <div class="skill-card">
@@ -390,7 +458,7 @@
         <div class="chips"><span class="chip">Flutter</span><span class="chip">Python Tkinter (GUI)</span></div>
       </div>
       <div class="skill-card">
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span data-ku="بنکەدراوە">Databases</span></h3>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v6c0 1.7 3.6 3 8 3s8-1.3 8-3V5M4 11v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></svg><span data-ku="بنکەدراوەکان">Databases</span></h3>
         <div class="chips"><span class="chip">SQL</span><span class="chip">SQLite</span><span class="chip">DB Design</span></div>
       </div>
       <div class="skill-card">
@@ -398,13 +466,15 @@
         <div class="chips"><span class="chip">JavaScript</span><span class="chip">REST APIs</span><span class="chip">Server Deployment</span></div>
       </div>
       <div class="skill-card">
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 2-3 2M12 12h3"/></svg><span data-ku="لینوکس و سیستەمەکان">Linux &amp; Systems</span></h3>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8l3 2-3 2M12 12h3"/></svg><span data-ku="Linux و سیستەمەکان">Linux &amp; Systems</span></h3>
         <div class="chips"><span class="chip">Ubuntu / Lubuntu</span><span class="chip">Terminal</span><span class="chip">Package Mgmt</span><span class="chip">PipeWire / Audio</span></div>
       </div>
       <div class="skill-card">
-        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h.01M10 10h8M10 14h5"/></svg><span data-ku="سێرڤەر و دیڤئۆپس">Servers &amp; DevOps</span></h3>
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h.01M6 14h.01M10 10h8M10 14h5"/></svg><span data-ku="سێرڤەر و DevOps">Servers &amp; DevOps</span></h3>
         <div class="chips"><span class="chip">VPS / Contabo</span><span class="chip">SSH / SFTP</span><span class="chip">WinSCP</span><span class="chip">Termius</span><span class="chip">Git / GitHub</span></div>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -414,49 +484,58 @@
 <!-- PROJECTS -->
 <section id="projects" class="tab-panel">
   <div class="wrap">
+    <div class="term-window">
+    <div class="term-bar"><span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span><span class="term-title">er0n:~ (bash)</span></div>
+    <div class="term-body">
+    <div class="term-intro">
+      <div class="term-line" data-ku="⚡ تێرمیناڵی ER0N v4.0 — [نۆدی هەولێر سەرهێڵە]">⚡ ER0N TERMINAL v4.0 — [ERBIL NODE ONLINE]</div>
+      <div class="term-sub" data-ku="سیستەم دەستپێکرا.<br>بۆ بینینی بیلدە چالاکەکان بنووسە <b>projects</b>.">System initialized.<br>Type <b>projects</b> to view active builds.</div>
+    </div>
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title" data-ku="پڕۆژە و بیرۆکەکان">Projects &amp; Ideas</h2><span class="sec-line"></span></div>
     <div class="proj-grid reveal">
       <div class="proj">
         <span class="tag" data-ku="بۆت · باکئێند">Bots · Backend</span>
-        <h3 data-ku="بۆتەکانی دیسکۆرد">Discord Bots</h3>
-        <p data-ku="بۆتی دیسکۆرد بە جاڤاسکریپت کە خۆم گەشەیان پێدەدەم، بڵاویان دەکەمەوە و لەسەر ژێرخانی خۆم بەردەوام چالاکیان دەکەم.">JavaScript Discord bots I develop, deploy, and keep alive on my own infrastructure.</p>
+        <h3 data-ku="بۆتەکانی Discord">Discord Bots</h3>
+        <p data-ku="بۆتەکانی Discord بە JavaScript کە خۆم گەشەیان پێدەدەم، دایانمەزرێنم و لەسەر ژێرخانی خۆم بەردەوام کاریان پێدەکەم.">JavaScript Discord bots I develop, deploy, and keep running on my own infrastructure.</p>
         <ul class="feat">
-          <li data-ku="دروستکراوە بە جاڤاسکریپت">Built in JavaScript</li>
-          <li data-ku="بڵاوکراوەتەوە لەسەر VPS">Deployed on a VPS</li>
+          <li data-ku="دروستکراوە بە JavaScript">Built in JavaScript</li>
+          <li data-ku="دایمەزراوە لەسەر VPS">Deployed on a VPS</li>
           <li data-ku="بەڕێوەبردن و چاودێری سێرڤەر">Server management &amp; maintenance</li>
-          <li data-ku="کارکردنی بەردەوام ٢٤/٧">Live 24/7 uptime handling</li>
+          <li data-ku="بەردەوام کارکردن ٢٤/٧">Live 24/7 uptime handling</li>
         </ul>
       </div>
       <div class="proj">
         <span class="tag" data-ku="ئەزموون · گەشەپێدەر">Experience · Developer</span>
-        <h3 data-ku="ئەپی پارچە ڕەسان">Parcha Rasan App</h3>
-        <p data-ku="وەک گەشەپێدەر لەسەر ئەپی پارچە ڕەسان کارم کرد — دروستکردنی تایبەتمەندی، چاکردنی کێشەکان، و بەشداری لە بەرهەمێکی ڕاستەقینەی بەکارهێنراو لەلایەن خەڵکەوە.">Worked as a developer on the Parcha Rasan app — building features, fixing issues, and contributing to a real product used by real people.</p>
+        <h3 data-ku="ئەپی پارچە رەسەن">Parcha Rasan App</h3>
+        <p data-ku="وەک گەشەپێدەر لەسەر ئەپی پارچە رەسەن کارم کردووە؛ بەشداری لە دروستکردنی تایبەتمەندییەکان، چاککردنەوەی کێشەکان، و گەشەپێدانی بەرهەمێکی ڕاستەقینە کە خەڵک بەکاری دەهێنن.">Worked as a developer on the Parcha Rasan app — building features, fixing issues, and contributing to a real product used by real people.</p>
         <ul class="feat">
           <li data-ku="گەشەپێدانی ئەپی مۆبایل">Mobile app development</li>
-          <li data-ku="دروستکردنی تایبەتمەندی و چاکردنەوە">Feature building &amp; debugging</li>
-          <li data-ku="گەیاندنە بەرهەمهێنان">Shipping to production</li>
+          <li data-ku="دروستکردنی تایبەتمەندی و چاککردنەوەی کێشەکان">Feature building &amp; debugging</li>
+          <li data-ku="گەیاندنی ئەپەکە بۆ بەکارهێنانی ڕاستەقینە">Shipping to production</li>
         </ul>
       </div>
       <div class="proj">
         <span class="tag" data-ku="پڕۆژەی کڕیار · گەشەپێدەر">Client Project · Developer</span>
         <h3 data-ku="سۆفتوێری کۆمپانیای تایبەت">Private Company Software</h3>
-        <p data-ku="گەشەپێدانی سۆفتوێری تایبەت بۆ کۆمپانیایەکی تایبەت لە سلێمانی — دروستکراوە بۆ پێداویستیە ڕاستەقینەکانی کارەکەیان.">Developed custom software for a private company in Sulaymaniyah — built to fit their real business needs.</p>
+        <p data-ku="سۆفتوێرێکی تایبەتم بۆ کۆمپانیایەکی تایبەت لە سلێمانی گەشە پێداوە؛ بە شێوەیەک دروستکراوە کە لەگەڵ پێداویستییە ڕاستەقینەکانی کاروباریان بگونجێت.">Developed custom software for a private company in Sulaymaniyah — built to fit their real business needs.</p>
         <ul class="feat">
           <li data-ku="گەشەپێدانی سۆفتوێری تایبەت">Custom software development</li>
-          <li data-ku="دروستکراوە بۆ بەکارهێنانی بازرگانی ڕاستەقینە">Built for real business use</li>
+          <li data-ku="دروستکراوە بۆ بەکارهێنانی ڕاستەقینەی بازرگانی">Built for real business use</li>
           <li data-ku="کڕیار لە سلێمانی">Client in Sulaymaniyah</li>
         </ul>
       </div>
       <div class="proj">
         <span class="tag" data-ku="کاری ئازاد · وێب">Freelance · Web</span>
         <h3 data-ku="گەشەپێدانی ماڵپەڕ">Website Development</h3>
-        <p data-ku="دیزاین و دروستکردنی ماڵپەڕی گونجاو بۆ پێداویستی جیاواز — ڕووکاری پاک، بڵاوکردنەوە، و دۆمەینی تایبەت.">Designed and built responsive websites for different needs — clean front-ends, deployment, and custom domains.</p>
+        <p data-ku="ماڵپەڕی وەڵامدەرەوەم دیزاین و دروست کردووە بۆ پێداویستیی جۆراوجۆر؛ لە دروستکردنی ڕووکاری پاک و خاوێنەوە بۆ دایمەزراندن و ڕێکخستنی دۆمەینی تایبەت.">Designed and built responsive websites for different needs — clean front-ends, deployment, and custom domains.</p>
         <ul class="feat">
           <li>HTML · CSS · JavaScript</li>
-          <li data-ku="دیزاینی گونجاو، مۆبایل-یەکەم">Responsive, mobile-first design</li>
-          <li data-ku="هۆستکردن و ڕێکخستنی دۆمەین">Hosting &amp; domain setup</li>
+          <li data-ku="دیزاینی Responsive و مۆبایل-یەکەم">Responsive, mobile-first design</li>
+          <li data-ku="ڕێکخستنی Hosting و Domain">Hosting &amp; domain setup</li>
         </ul>
       </div>
+    </div>
+    </div>
     </div>
   </div>
 </section>
@@ -472,7 +551,7 @@
         <h3 data-ku="زانستی کۆمپیوتەر">Computer Science</h3>
         <div class="stage mono" data-ku="زانکۆی نۆڵج · هەولێر">Knowledge University · Erbil</div>
         <div class="stage mono" style="color:var(--muted)" data-ku="قۆناغی دووەم · بەردەوامە">Second Stage · In Progress</div>
-        <p style="color:var(--muted);font-size:.95rem;margin-top:12px" data-ku="خوێندنی وانە و خۆفێرکردن لە بنەماکانی هاردوێر، لۆجیک، و ئەندازیاری سۆفتوێر.">Coursework and self-study across the fundamentals of hardware, logic, and software engineering.</p>
+        <p style="color:var(--muted);font-size:.95rem;margin-top:12px" data-ku="خوێندن و خۆفێربوون لە بنەماکانی هاردوێر، لۆجیک و ئەندازیاری سۆفتوێر.">Coursework and self-study across the fundamentals of hardware, logic, and software engineering.</p>
         <div class="subject-chips">
           <span class="chip">Digital System Design</span>
           <span class="chip">Logic Design</span>
@@ -488,9 +567,9 @@
       <div class="edu-block">
         <h3 data-ku="ئێستا چی فێردەبم">What I'm Learning Right Now</h3>
         <ul class="learn">
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="فێربوونی <b>داکەر</b> و کۆنتەینەرەکان">Learning <b>Docker</b> &amp; containers</span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="دروستکردنی <b>REST APIs</b>">Building <b>REST APIs</b></span></li>
-          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="<b>CI/CD</b> و بڵاوکردنەوە"><b>CI/CD</b> &amp; deployment</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="فێربوونی <b>Docker</b> و کۆنتەینەرەکان">Learning <b>Docker</b> &amp; containers</span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="دروستکردنی <b>REST API</b>">Building <b>REST APIs</b></span></li>
+          <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg><span data-ku="فێربوونی <b>CI/CD</b> و دایمەزراندن"><b>CI/CD</b> &amp; deployment</span></li>
         </ul>
       </div>
     </div>
@@ -504,9 +583,9 @@
   <div class="wrap">
     <div class="sec-head"><span class="sec-num">05</span><h2 class="sec-title" data-ku="خەون و ئامانجەکان">Dreams &amp; Goals</h2><span class="sec-line"></span></div>
     <div class="goals-list reveal">
-      <div class="goal"><span class="no">01</span><p data-ku="پشتگیری <strong>بازرگانییە بچووکەکان</strong> بۆ گواستنەوە لە کارکردنی نەریتییەوە بۆ <strong>تەکنەلۆژیای هاوچەرخ</strong> لە وڵاتەکەم">Support <strong>small businesses</strong> in moving from traditional operations into <strong>modern technology</strong> in my country</p></div>
-      <div class="goal"><span class="no">02</span><p data-ku="دروستکردنی <strong>تەکنەلۆژیای بەسوود بۆ خوێندکاران</strong>">Build <strong>useful technology for students</strong></p></div>
-      <div class="goal"><span class="no">03</span><p data-ku="دروستکردنی <strong>براند / بازرگانی تەکنەلۆژیای</strong> خۆم">Build my own <strong>technology brand / business</strong></p></div>
+      <div class="goal"><span class="no">01</span><p data-ku="یارمەتی بازرگانییە بچووکەکان بدەم بۆ گواستنەوە لە شێوازی کارکردنی نەریتییەوە بۆ بەکارهێنانی تەکنەلۆژیای نوێ لە وڵاتەکەم.">Support <strong>small businesses</strong> in moving from traditional operations into <strong>modern technology</strong> in my country.</p></div>
+      <div class="goal"><span class="no">02</span><p data-ku="دروستکردنی تەکنەلۆژیای بەسوود بۆ خوێندکاران.">Build <strong>useful technology for students</strong>.</p></div>
+      <div class="goal"><span class="no">03</span><p data-ku="دروستکردنی براند و کاروباری تەکنەلۆژیای خۆم.">Build my own <strong>technology brand / business</strong>.</p></div>
     </div>
   </div>
 </section>
@@ -516,7 +595,7 @@
   <div class="wrap">
     <div class="contact-card reveal">
       <h2 data-ku="با شتێک دروست بکەین.">Let's build something.</h2>
-      <p data-ku="ئامادەم بۆ پڕۆژە، هاوکاری، و فێربوون لەگەڵ گەشەپێدەرانی تر. لێرە بمدۆزەرەوە — هەمیشە دڵخۆشم بە قسەکردن دەربارەی کۆد و تەکنەلۆژیا.">Open to projects, collaboration, and learning with other developers. Find me here — always happy to talk code and technology.</p>
+      <p data-ku="ئامادەم بۆ پڕۆژە، هاوکاری و فێربوون لەگەڵ گەشەپێدەرانی تر. لێرە پەیوەندیم پێوە بکە — هەمیشە خۆشحاڵم بە گفتوگۆ دەربارەی کۆد و تەکنەلۆژیا.">Open to projects, collaboration, and learning with other developers. Find me here — always happy to talk code and technology.</p>
       <div class="contact-links">
         <a class="clink" href="https://github.com/ER0-N" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.57.1.78-.25.78-.55v-2c-3.2.7-3.87-1.37-3.87-1.37-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.75.4-1.27.73-1.56-2.56-.29-5.26-1.28-5.26-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.28 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.2.66.79.55A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
@@ -530,7 +609,7 @@
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.3 4.4A19 19 0 0 0 15.6 3l-.3.5a17 17 0 0 1 4.2 1.3 15.8 15.8 0 0 0-14.9 0A17 17 0 0 1 8.8 3.5L8.4 3a19 19 0 0 0-4.7 1.4C1 8.9.2 13.3.6 17.6a19 19 0 0 0 5.8 2.9l.5-.7a12.5 12.5 0 0 1-2-1l.5-.4a13.6 13.6 0 0 0 11.6 0l.5.4a12.5 12.5 0 0 1-2 1l.5.7a19 19 0 0 0 5.8-2.9c.5-5-.8-9.4-3.5-13.2zM8.5 15c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2zm7 0c-1 0-1.8-.9-1.8-2s.8-2 1.8-2 1.9.9 1.8 2c0 1.1-.8 2-1.8 2z"/></svg>
           Discord · 0baw
         </a>
-        <a class="clink" href="mailto:eron.omer1@gmail.com">
+        <a class="clink" href="https://mail.google.com/mail/?view=cm&fs=1&to=eron.omer1@gmail.com" target="_blank" rel="noopener">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M3 6.5l9 6 9-6"/></svg>
           <span data-ku="ئیمەیل">Email</span>
         </a>
@@ -546,7 +625,7 @@
 <footer>
   <div class="wrap">
     <div class="foot-social">
-      <a href="mailto:eron.omer1@gmail.com" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M3 6.5l9 6 9-6"/></svg></a>
+      <a href="https://mail.google.com/mail/?view=cm&fs=1&to=eron.omer1@gmail.com" target="_blank" rel="noopener" aria-label="Email" title="Email"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2.5"/><path d="M3 6.5l9 6 9-6"/></svg></a>
       <a href="https://wa.me/9647503962006" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.06 24l1.68-6.13A11.86 11.86 0 0 1 .16 11.9 11.9 11.9 0 0 1 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.82 11.82 0 0 1 3.48 8.41c0 6.56-5.34 11.9-11.9 11.9a11.9 11.9 0 0 1-5.68-1.45L.06 24zM6.6 20.13l.36.21a9.86 9.86 0 0 0 5.03 1.38 9.9 9.9 0 0 0 9.9-9.89 9.85 9.85 0 0 0-2.9-7A9.82 9.82 0 0 0 12.06 2a9.9 9.9 0 0 0-9.9 9.89 9.83 9.83 0 0 0 1.51 5.26l.24.38-1 3.63 3.69-.97zM17.5 14.4c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.49 0 1.47 1.07 2.89 1.22 3.09.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.08 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z"/></svg></a>
     </div>
     <div data-ku="ئێرۆن <span class='dot'>·</span> گەشەپێدەری سۆفتوێر">ERON <span class="dot">·</span> SOFTWARE DEVELOPER</div>
@@ -569,7 +648,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     root.setAttribute('lang', l === 'ku' ? 'ckb' : 'en');
     root.setAttribute('dir', l === 'ku' ? 'rtl' : 'ltr');
-    if (langBtn) langBtn.textContent = (l === 'ku') ? 'English' : 'کوردی';
+    if (langBtn){ langBtn.setAttribute('title', (l === 'ku') ? 'English' : 'کوردی'); langBtn.classList.toggle('on', l === 'ku'); var _lbl=langBtn.querySelector('.lang-label'); if(_lbl) _lbl.textContent = (l === 'ku') ? 'English' : 'کوردی'; }
     try { localStorage.setItem('eron-lang', l); } catch (e) {}
   }
   var savedLang = null;
@@ -623,6 +702,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (on) found = true;
       });
       if (!found) return;
+      document.documentElement.setAttribute('data-active-tab', id);
       document.querySelectorAll('.links .tablink').forEach(function (l) {
         l.classList.toggle('on', l.getAttribute('data-tab') === id);
       });
