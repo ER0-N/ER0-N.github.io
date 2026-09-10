@@ -122,7 +122,8 @@
   .home2-badge .bdot{width:9px;height:9px;border-radius:50%;background:var(--good);box-shadow:0 0 0 4px color-mix(in srgb,var(--good) 24%,transparent);flex:none}
   .home2-badge .t{font-family:"Saira";font-weight:700;font-size:.9rem;line-height:1.15;color:var(--text)}
   .home2-badge .t em{display:block;font-style:normal;font-weight:400;font-size:.72rem;color:var(--muted)}
-  @media(max-width:860px){.home2-grid{grid-template-columns:1fr;gap:30px}.home2-right{justify-content:center}.home2-photo{max-width:360px}}
+  @media(max-width:860px){.home2-grid{grid-template-columns:1fr;gap:14px}.home2-right{justify-content:center}
+    .home2-photo,[dir="rtl"] .home2-photo{max-width:360px;-webkit-mask-image:none;mask-image:none;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}}
   .tab-panel{display:none}
   .tab-panel.active{display:block}
   @media (prefers-reduced-motion:no-preference){.tab-panel.active{animation:tabfade .4s ease}@keyframes tabfade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}}
