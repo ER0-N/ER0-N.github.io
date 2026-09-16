@@ -743,6 +743,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var navToggle = document.getElementById('navToggle');
     var navHeader = document.querySelector('header.nav');
     if (navToggle && navHeader) navToggle.addEventListener('click', function(){ navHeader.classList.toggle('open'); });
+
+    // ---- TikTok-style: scroll past the end to switch tabs ----
+    var _order = ['home','about','skills','projects','education','goals','contact'];
+    var _lock = false;
+    function _cur(){ var a=document.querySelector('.tab-panel.active'); return a ? _order.indexOf(a.id) : 0; }
+    function _go(dir){ var i=_cur(); if(i<0) return false; var n=i+dir; if(n<0||n>=_order.length) return false; activate(_order[n]); return true; }
+    function _atBottom(){ return (window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 4); }
+    function _atTop(){ return window.scrollY <= 2; }
+    function _fire(dir){ if(_lock) return; if(_go(dir)){ _lock=true; setTimeout(function(){ _lock=false; }, 750); } }
+    window.addEventListener('wheel', function(e){ if(_lock) return; if(e.deltaY>4 && _atBottom()) _fire(1); else if(e.deltaY<-4 && _atTop()) _fire(-1); }, {passive:true});
+    var _sy=null, _wb=false, _wt=false;
+    window.addEventListener('touchstart', function(e){ _sy=e.touches[0].clientY; _wb=_atBottom(); _wt=_atTop(); }, {passive:true});
+    window.addEventListener('touchend', function(e){ if(_sy==null) return; var dy=_sy - e.changedTouches[0].clientY; if(dy>55 && _wb) _fire(1); else if(dy<-55 && _wt) _fire(-1); _sy=null; }, {passive:true});
     activate('home');
   }
 
