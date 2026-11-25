@@ -396,6 +396,15 @@
   .term-window .term-bar{border:none;border-bottom:1px solid color-mix(in srgb,var(--line-strong) 45%,transparent);border-radius:0}
   .term-body{padding:26px 26px 32px}
   .term-body .term-intro{border:none;background:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;padding:0;margin:0 0 22px;border-bottom:1px dashed color-mix(in srgb,var(--line-strong) 50%,transparent);padding-bottom:18px}
+
+  /* Featured analytics project */
+  .proj.analytics{grid-column:span 2;min-width:0}
+  .proj-preview{display:block;margin:20px 0 0;border:1px solid var(--line-strong);border-radius:10px;overflow:hidden;background:var(--bg2)}
+  .proj-preview img{display:block;width:100%;height:auto}
+  .proj-preview:focus-visible,.project-link:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+  .proj-caption{display:block;padding:10px 12px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line)}
+  .project-link{align-self:flex-start;margin-top:20px}
+  @media(max-width:860px){.proj.analytics{grid-column:auto}}
 </style>
 
 <header class="nav">
@@ -487,6 +496,10 @@
     </div>
     <div class="sec-head"><span class="sec-num">02</span><h2 class="sec-title" data-ku="لێهاتوویی تەکنیکی">Technical Skills</h2><span class="sec-line"></span></div>
     <div class="skill-grid reveal">
+      <div class="skill-card" id="power-bi-skill">
+        <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18M7 16v-5M12 16V7M17 16V4"/></svg><span data-ku="شیکاری داتا">Data Analytics</span></h3>
+        <div class="chips"><span class="chip">Power BI</span><span class="chip" data-ku="پیشاندانی داتا">Data Visualization</span><span class="chip" data-ku="داشبۆردەکان">Dashboards</span><span class="chip" data-ku="ڕاپۆرتی نیشاندەرە سەرەکییەکان">KPI Reporting</span></div>
+      </div>
       <div class="skill-card">
         <h3><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg><span data-ku="بەرنامەسازی">Programming</span></h3>
         <div class="chips"><span class="chip">Python</span><span class="chip">C++</span><span class="chip">JavaScript</span><span class="chip">Java</span></div>
@@ -531,6 +544,33 @@
     </div>
     <div class="sec-head"><span class="sec-num">03</span><h2 class="sec-title" data-ku="پڕۆژە و بیرۆکەکان">Projects &amp; Ideas</h2><span class="sec-line"></span></div>
     <div class="proj-grid reveal">
+      <div class="proj" id="facelens-ai">
+        <span class="tag" data-ku="زیرەکی دەستکرد · ئەپی دەسکتۆپ">AI · Desktop App</span>
+        <h3>FaceLens AI</h3>
+        <p data-ku="سەرکردایەتی تیمێکی چوار کەسیم کرد بۆ دروستکردنی ئەپێکی فێرکاریی ویندۆز کە بە کامێرا ڕووخسار دەدۆزێتەوە، تەمەن خەمڵاندن دەکات و دەربڕینی ڕووخسار بە ئیمۆجی پیشان دەدات. پرۆسەکردن لەسەر کۆمپیوتەرەکە ئەنجام دەدرێت و مێژووی سکانەکان پاشەکەوت ناکرێت.">Led a four-person team building an educational Windows app for webcam face detection, statistical age estimates, and facial-expression predictions with emojis. Processing runs locally, without saving scan history.</p>
+        <ul class="feat">
+          <li>Python · PyQt6 · OpenCV · ONNX Runtime</li>
+          <li data-ku="دۆزینەوە و ژماردنی ڕووخسار بە شێوەی ڕاستەوخۆ">Live face detection &amp; counting</li>
+          <li data-ku="خەمڵاندنی تەمەن و پێشبینیکردنی دەربڕینی ڕووخسار">Age estimates &amp; expression predictions</li>
+          <li data-ku="پێشبینییەکان خەمڵاندنن؛ تەمەن یان هەستی ڕاستەقینە پشتڕاست ناکەنەوە">Estimates, not age verification or a measure of feelings</li>
+        </ul>
+        <a class="btn ghost" href="https://facelens-ai-privacy.vercel.app" target="_blank" rel="noopener noreferrer" style="margin-top:20px;align-self:flex-start" data-ku="سیاسەتی پاراستنی نهێنی">Privacy policy</a>
+      </div>
+      <div class="proj analytics" id="power-bi-dashboard">
+        <span class="tag" data-ku="شیکاری داتا · Power BI">Data Analytics · Power BI</span>
+        <h3 data-ku="داشبۆردی شیکاری فرۆشتنی ئەلیکترۆنی">E-commerce Analytics Dashboard</h3>
+        <p data-ku="داشبۆردێکم بە Power BI دروست کردووە بۆ شیکردنەوەی فرۆشتن، قازانج و هاتوچۆی ماڵپەڕ. نیشاندەرە سەرەکییەکان، گۆڕانی داهات بە تێپەڕبوونی کات، بەراوردی بەرهەمەکان و سەرچاوەکانی سەردان لە یەک ڕووکاردا کۆ دەکاتەوە.">Built a Power BI dashboard to explore sales, profitability, and website traffic. It brings key business metrics, revenue trends, product comparisons, and acquisition channels into one report.</p>
+        <ul class="feat">
+          <li data-ku="داهات، قازانج، تێچوو و ڕێژەی قازانج">Revenue, gross profit, cost &amp; margin KPIs</li>
+          <li data-ku="گۆڕانی داهات و کارایی بەرهەمەکان">Revenue trends &amp; product performance</li>
+          <li data-ku="سەرچاوەکانی سەردان، ئامێرەکان و ڕێژەی گۆڕین">Traffic sources, device breakdown &amp; conversion rate</li>
+          <li data-ku="پاڵاوتنی بەرهەم و شیکردنەوەی گەڕاندنەوەکان">Product filtering &amp; refund analysis</li>
+        </ul>
+        <a class="proj-preview" href="assets/power-bi-dashboard.png" target="_blank" rel="noopener noreferrer">
+          <img src="assets/power-bi-dashboard.png" alt="Power BI dashboard showing revenue, profit, product performance, website traffic, and conversion metrics" width="1450" height="855" loading="lazy" decoding="async">
+          <span class="proj-caption" data-ku="پێشبینینی داشبۆرد · کردنەوەی وێنەی تەواو">Dashboard preview · View full image</span>
+        </a>
+      </div>
       <div class="proj">
         <span class="tag" data-ku="بۆت · باکئێند">Bots · Backend</span>
         <h3 data-ku="بۆتەکانی Discord">Discord Bots</h3>
@@ -551,6 +591,7 @@
           <li data-ku="دروستکردنی تایبەتمەندی و چاککردنەوەی کێشەکان">Feature building &amp; debugging</li>
           <li data-ku="گەیاندنی ئەپەکە بۆ بەکارهێنانی ڕاستەقینە">Shipping to production</li>
         </ul>
+        <a class="btn ghost project-link" href="https://parcha-rasan.com/" target="_blank" rel="noopener noreferrer" data-ku="سەردانی ماڵپەڕ">Visit website</a>
       </div>
       <div class="proj">
         <span class="tag" data-ku="پڕۆژەی کڕیار · گەشەپێدەر">Client Project · Developer</span>
